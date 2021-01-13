@@ -51,6 +51,7 @@ project.fragment.lock.json
 artifacts/
 **/Properties/launchSettings.json
 
+*.bak
 *_i.c
 *_p.c
 *_i.h
