@@ -11,7 +11,7 @@
     "core-js": "^2.6.11",
     "devextreme-quill": "^0.9.8",
     "devextreme": "^20.2.3",
-    "devextreme-vue": "^20.2.3",
+    "devextreme-vue": "^20.2.3", 
     "vue": "^2.6.12"
   },
   "devDependencies": {
