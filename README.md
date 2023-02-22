@@ -30,6 +30,6 @@ HtmlEditor is built on top of and requires the [DevExtreme Quill](https://github
     
 ## Documentation
 
-- [Getting Started with DataGrid](https://js.devexpress.com/Documentation/Guide/UI_Components/Scheduler/Getting_Started_with_DataGrid/)
+- [Getting Started with DataGrid](https://js.devexpress.com/Documentation/Guide/UI_Components/DataGrid/Getting_Started_with_DataGrid/)
 
 - [DataGrid - API Reference](https://js.devexpress.com/Documentation/ApiReference/UI_Components/dxDataGrid/)
