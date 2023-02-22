@@ -15,16 +15,16 @@ HtmlEditor is built on top of and requires the [DevExtreme Quill](https://github
 ## Files to Review
 
 - **jQuery**
-    - [index.html](jquery/index.html)
+    - [index.html](jQuery/index.html)
 - **Angular**
-    - [app.component.html](angular/src/app/app.component.html)
-    - [app.component.ts](angular/src/app/app.component.ts)
+    - [app.component.html](Angular/src/app/app.component.html)
+    - [app.component.ts](Angular/src/app/app.component.ts)
 - **AngularJS**
-    - [index.html](jquery/index.html)
+    - [index.html](AngularJS/index.html)
 - **Vue**
-    - [App.vue](vue/src/App.vue)
+    - [App.vue](Vue/src/App.vue)
 - **React**
-    - [App.js](react/src/App.js)
+    - [App.js](React/src/App.js)
 - **ASP.Net Core**    
     - [Index.cshtml](ASP.NET%20Core/DataGridCustomSorting/Views/Home/Index.cshtml)
     
