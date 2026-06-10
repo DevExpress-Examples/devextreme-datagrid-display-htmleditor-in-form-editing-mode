@@ -5,7 +5,7 @@ import Content from '../HomeContent.vue';
 
 describe('Content', () => {
   it('renders properly', () => {
-    const wrapper = mount(Content, { props: { text: 'count' } });
-    expect(wrapper.text()).toContain('count');
+    const wrapper = mount(Content);
+    expect(wrapper.find('.dx-datagrid').exists()).toBe(true);
   });
 });

@@ -1,28 +1,55 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue';
-
 import 'devextreme/dist/css/dx.material.blue.light.compact.css';
-import DxButton from 'devextreme-vue/button';
+import {
+  DxColumn,
+  DxDataGrid,
+  DxEditing,
+  DxFormItem,
+  DxPaging,
+} from 'devextreme-vue/data-grid';
+import 'devextreme-vue/html-editor';
+import { employees } from '../data';
 
-const props = defineProps({
-  text: {
-    type: String,
-    default: 'count',
+const htmlEditorOptions = {
+  height: 190,
+  toolbar: {
+    items: ['bold', 'italic', 'underline'],
   },
-});
-const count = ref(0);
-const buttonText = computed < string > (
-  () => `Click ${props.text}: ${count.value}`
-);
-function clickHandler() {
-  count.value += 1;
-}
+};
 </script>
 <template>
   <div>
-    <DxButton
-      :text="buttonText"
-      @click="clickHandler"
-    />
+    <DxDataGrid
+      :data-source="employees"
+      :show-borders="true"
+      key-expr="ID"
+    >
+      <DxPaging :enabled="false"/>
+      <DxEditing
+        :allow-updating="true"
+        mode="form"
+      />
+      <DxColumn
+        :width="70"
+        data-field="Prefix"
+        caption="Title"
+      />
+      <DxColumn data-field="FirstName"/>
+      <DxColumn data-field="LastName"/>
+      <DxColumn
+        :width="170"
+        data-field="Position"
+      />
+      <DxColumn
+        :visible="false"
+        data-field="Notes"
+      >
+        <DxFormItem
+          :col-span="2"
+          :editor-options="htmlEditorOptions"
+          editor-type="dxHtmlEditor"
+        />
+      </DxColumn>
+    </DxDataGrid>
   </div>
 </template>
