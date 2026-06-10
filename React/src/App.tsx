@@ -1,16 +1,39 @@
-import { useCallback, useState } from 'react';
 import './App.css';
 import 'devextreme/dist/css/dx.material.blue.light.compact.css';
-import Button from 'devextreme-react/button';
+import DataGrid, {
+  Column,
+  Editing,
+  FormItem,
+  Paging,
+} from 'devextreme-react/data-grid';
+import 'devextreme-react/html-editor';
+import { employees } from './data';
+
+const htmlEditorOptions = {
+  height: 190,
+  toolbar: {
+    items: ['bold', 'italic', 'underline'],
+  },
+};
 
 function App(): JSX.Element {
-  var [count, setCount] = useState<number>(0);
-  const clickHandler = useCallback(() => {
-    setCount((prev) => prev + 1);
-  }, [setCount]);
   return (
     <div className="main">
-      <Button text={`Click count: ${count}`} onClick={clickHandler} />
+      <DataGrid dataSource={employees} keyExpr="ID" showBorders={true}>
+        <Paging enabled={false} />
+        <Editing mode="form" allowUpdating={true} />
+        <Column dataField="Prefix" caption="Title" width={70} />
+        <Column dataField="FirstName" />
+        <Column dataField="LastName" />
+        <Column dataField="Position" width={170} />
+        <Column dataField="Notes" visible={false}>
+          <FormItem
+            colSpan={2}
+            editorType="dxHtmlEditor"
+            editorOptions={htmlEditorOptions}
+          />
+        </Column>
+      </DataGrid>
     </div>
   );
 }
