@@ -1,14 +1,10 @@
 import { TestBed } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule,
-      ],
-      declarations: [
         AppComponent,
       ],
     }).compileComponents();
@@ -20,16 +16,10 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it('should have as title \'angular-test\'', () => {
+  it('should configure the Notes form item with an HtmlEditor', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('angular-test');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('angular-test app is running!');
+    expect(app.dataSource.length).toBeGreaterThan(0);
+    expect(app.htmlEditorOptions.toolbar.items).toEqual(['bold', 'italic', 'underline']);
   });
 });
